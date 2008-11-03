@@ -1,0 +1,31 @@
+<div id="body-left">
+	<div id="topic-pic">
+		<%= property_photo_for(@property, :large, 'none') %>
+	</div>
+	<%= render :partial => "new_inquiry" -%>
+</div>
+<div id="body-right">
+	<p style="color:green"><%= flash[:notice] %></p>
+	<p style="color:red"><%= flash[:error] %></p>
+	<h2>Property Details</h2>
+	<div class="box">
+		<p><b>Ref #:</b> <%=h @property.id %><br /><br />
+		<b>Type:</b> <%=h @property.find_type_name %><br />
+		<b>Address:</b> <%=h @property.building.name %><br />
+		<%= "<b>Bedrooms:</b> #{@property.bedrooms}<br />" if(@property.bedrooms > 0) %>
+		<b>View:</b> <%=h @property.view %><br />
+		<b>Area:</b> <%=h @property.area %> sqft (aprox. <%=h @property.area_in_sqm %> sqm)<br />
+		<b>Price:</b> <%= number_to_currency(@property.price, :unit => "AED ", :precision => 0) %><br />
+		<%=h @property.building.project.name %>,
+		<%=h @property.building.project.neighborhood.name %>,
+		<%=h @property.building.project.neighborhood.emirate.name %><br /><br />
+		<b>Date added:</b> <%=h @property.created_at %></p> 
+		<% if @property.description.length > 0 %>
+			<p><b>Description:</b></p>
+			<p><%= @property.description %></p>
+		<% end %>
+		
+		<div class="clear"></div>
+	</div>
+</div>
+<div class="clear"></div>

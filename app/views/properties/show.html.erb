@@ -1,0 +1,48 @@
+<p>
+  <b>Photo:</b><br />
+  <%= property_photo_for(@property) %>
+</p>
+
+<p>
+  <b>Building:</b>
+  <%=h @property.building_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%=h @property.type_id %>
+</p>
+
+<p>
+  <b>Bedrooms:</b>
+  <%=h @property.bedrooms %>
+</p>
+
+<p>
+  <b>View:</b>
+  <%=h @property.view %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%=h @property.area %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @property.price %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @property.url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @property.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

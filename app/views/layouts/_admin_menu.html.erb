@@ -1,0 +1,15 @@
+<% unless controller.controller_name == "sessions" %>
+<ul id="main-menu">
+	<li><%= link_to "Emirates", :controller => "emirates" %></li>
+	<li><%= link_to "Neighborhoods", :controller => "neighborhoods" %></li>
+	<li><%= link_to "Projects", :controller => "projects" %></li>
+	<li><%= link_to "Buildings", :controller => "buildings" %></li>
+	<li><%= link_to "Properties", :controller => "properties" %></li>
+	<li>|</li>
+	<li><%= link_to "Types", :controller => "types" %></li>
+	<li>|</li>
+	<li><%= link_to "Inquiries", :controller => "inquiries" %></li>
+	<li>|</li>
+	<li><%= link_to "Logout", :controller => "logout" %></li>
+</ul>
+<% end %>

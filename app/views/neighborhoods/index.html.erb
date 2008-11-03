@@ -1,0 +1,23 @@
+<h1>Listing neighborhoods</h1>
+
+<table>
+  <tr>
+    <th>Emirate</th>
+    <th>Name</th>
+  </tr>
+
+<% for neighborhood in @neighborhoods %>
+  <tr>
+    <td><%=h neighborhood.emirate.name %></td>
+    <td><%=h neighborhood.name %></td>
+    <td><%= link_to 'Show', neighborhood %></td>
+		<td><%= link_to 'Select', :action => "select", :id => neighborhood.id %>
+    <td><%= link_to 'Edit', edit_neighborhood_path(neighborhood) %></td>
+    <td><%= link_to 'Destroy', neighborhood, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New neighborhood', new_neighborhood_path %>

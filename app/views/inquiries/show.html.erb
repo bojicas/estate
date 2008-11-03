@@ -1,0 +1,33 @@
+<p>
+  <b>Ref #:</b>
+  <%=h @inquiry.property_id %>
+</p>	
+
+<p>
+  <b>Name:</b>
+  <%=h @inquiry.name %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @inquiry.phone %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @inquiry.email %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%=h @inquiry.message %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @inquiry.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_inquiry_path(@inquiry) %> |
+<%= link_to 'Back', inquiries_path %>

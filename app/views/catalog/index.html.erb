@@ -1,0 +1,10 @@
+<div id="body-left">
+	<%= render :partial => "smart_listing" -%>
+</div>
+<div id="body-right">
+	<p style="color:green"><%= flash[:notice] %></p>
+	<p style="color:red"><%= flash[:error] %></p>
+	<h2>Hot Deals</h2>
+	<%= render :partial => "boxed_listing" %>
+</div>
+<div class="clear"></div>

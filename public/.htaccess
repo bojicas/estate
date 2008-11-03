@@ -1,0 +1,9 @@
+DirectoryIndex index.html dispatch.fcgi
+
+AddHandler fcgid-script .fcgi
+#Options +FollowSymLinks +ExecFCGI
+# RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ dispatch.fcgi?$1 [L,QSA]
+RewriteEngine On

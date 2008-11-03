@@ -1,0 +1,22 @@
+<% for property in @properties %>
+	<div class="box">
+		<%= property_photo_for(property) %>
+
+    <p><b>Type:</b> <%=h property.find_type_name %><br />
+		<b>Address:</b> <%=h property.building.name %><br />
+		<%= "<b>Bedrooms:</b> #{property.bedrooms}<br />" if(property.bedrooms > 0) %>
+		<b>View:</b> <%=h property.view %><br />
+		<b>Area:</b> <%=h property.area %> sqft (<%=h property.area_in_sqm %> sqm)<br />
+    <b>Price:</b> <%= number_to_currency(property.price, :unit => "AED ", :precision => 0) %><br />
+		<%=h property.building.project.name %>,
+		<%=h property.building.project.neighborhood.name %>,
+		<%=h property.building.project.neighborhood.emirate.name %></p> 
+
+		<div class="btns">
+			<a href="/catalog/<%=h property.id %>"><span>Inquiry</span></a>
+		</div>
+		<div class="clear"></div>
+	</div>
+<% end %>	
+
+

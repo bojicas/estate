@@ -1,0 +1,23 @@
+<p>
+  <b>Neighborhood:</b>
+  <%=h @project.neighborhood_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @project.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @project.url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @project.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

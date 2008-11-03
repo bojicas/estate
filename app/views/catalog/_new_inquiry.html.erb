@@ -1,0 +1,24 @@
+<% form_for(@inquiry) do |f| %>
+  <%= f.error_messages %>
+	<h3>New inquiry (ref # <%=h @property.id %>)</h3>
+  <p>
+		<%= f.hidden_field :property_id, :value => @property.id %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :message %><br />
+    <%= f.text_area :message, :rows => 5, :cols => 35 %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>

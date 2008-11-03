@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>gi'state - golden index</title>
+	<%= stylesheet_link_tag 'style' %>
+	
+</head>
+
+<body>
+
+<div id="outer">
+	<div id="wrapper">
+		<div id="header">
+			<div id="header-st">
+				<h1>&nbsp;</h1>
+				<p><b>Golden Index</b></p>
+			</div> 
+			<div id="header-gi"></div>
+		</div>
+		<div id="nav">
+			<div id="head"></div>
+			<div id="head-pip"></div>
+			<ul>
+				<li id="m1"><a href="/catalog">Home page</a></li>
+				<li id="m2"><a href="/catalog">Blog</a></li>
+				<li id="m3"><a href="/catalog">About us</a></li>
+			</ul>
+			<% if(controller.controller_name == 'catalog') %>
+				<%= render :partial => "simple_search" %>
+			<% end %>
+		</div>
+		<div id="body">
+			<div id="body-inner">
+				<%= yield %>
+			</div>
+			
+			<div id="footer">
+				<div id="help">
+					<p>If you're having problems visiting this site please don't hesitate to ask for help on the <a href="/catalog">forum</a>.</p>
+				</div>
+				
+				<div id="copyright">
+					<div id="copyright-left">
+						Copyright &copy; 2008 gistate.com, all right reserved
+					</div>
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

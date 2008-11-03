@@ -1,0 +1,36 @@
+<h1>Listing properties</h1>
+
+<table>
+  <tr>
+		<th>Thumbnail</th>
+    <th>Building</th>
+    <th>Type</th>
+    <th>Bedrooms</th>
+    <th>View</th>
+    <th>Area</th>
+    <th>Price</th>
+    <th>Url</th>
+    <th>Description</th>
+  </tr>
+
+<% for property in @properties %>
+  <tr>
+		<td><%= property_photo_for(property, :small) %></td>
+    <td><%=h property.building.project.neighborhood.emirate.name %> - <%=h property.building.project.neighborhood.name %> - <%=h property.building.project.name %> - <%=h property.building.name %></td>
+    <td><%=h property.find_type_name %></td>
+    <td><%=h property.bedrooms %></td>
+    <td><%=h property.view %></td>
+    <td><%=h property.area %></td>
+    <td><%=h property.price %></td>
+    <td><%=h property.url %></td>
+    <td><%=h property.description %></td>
+    <td><%= link_to 'Show', property %></td>
+    <td><%= link_to 'Edit', edit_property_path(property) %></td>
+    <td><%= link_to 'Destroy', property, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New property', new_property_path %>

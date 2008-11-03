@@ -1,0 +1,51 @@
+<h1>Editing property</h1>
+
+<% form_for(@property, :html => { :multipart => true }) do |f| %>
+  <%= error_messages_for :property, :property_photo %>
+  <p>
+    <%= f.label :building_id %><br />
+    <%= f.text_field :building_id %>
+  </p>
+  <p>
+    <%= f.label :type_id %><br />
+    <%= f.text_field :type_id %>
+  </p>
+  <p>
+    <%= f.label :bedrooms %><br />
+    <%= f.text_field :bedrooms %>
+  </p>
+  <p>
+    <%= f.label :view %><br />
+    <%= f.text_field :view %>
+  </p>
+  <p>
+    <%= f.label :area %><br />
+    <%= f.text_field :area %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+	<p>
+		<%= property_photo_for(@property) %><br />
+		<%= label :property, :property_photo %>
+		<%= file_field_tag :property_photo_file %>
+		<span class="hint">
+			We accept JPEG, GIF, or PNG files up to 750 KB.
+		</span>
+	</p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @property %> |
+<%= link_to 'Back', properties_path %>

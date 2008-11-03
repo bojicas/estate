@@ -1,0 +1,24 @@
+<h1>New neighborhood</h1>
+
+<% form_for(@neighborhood) do |f| %>
+  <%= f.error_messages %>
+
+
+  <p>
+    <%= f.label :emirate_id %><br />
+		<% if session[:emirate_id] && session[:emirate_name] %>
+    	<%= f.select(:emirate_id, @neighborhood.find_all_emirates, :selected => session[:emirate_id]) %>
+		<% else %>
+    	<%= f.select(:emirate_id, @neighborhood.find_all_emirates) %>
+		<% end %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', neighborhoods_path %>

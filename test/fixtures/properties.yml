@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  building_id: 1
+  type_id: 1
+  bedrooms: 1
+  view: MyString
+  area: 1
+  price: 1
+  url: MyString
+  description: MyText
+
+two:
+  building_id: 1
+  type_id: 1
+  bedrooms: 1
+  view: MyString
+  area: 1
+  price: 1
+  url: MyString
+  description: MyText

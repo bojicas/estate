@@ -1,0 +1,21 @@
+<div id="topic-pic">
+	<img src="/images/pic_1.jpg" width="259" height="199" alt="Pic 1" />
+</div>	<p>Type		Flat<br />
+	Address		Fl. 8  <br />
+	Bedrooms		1 bedroom<br />
+	Total Area		993.0   SqFt   92.2   m2<br />
+	Dubai, Jumeirah Village, South</p>
+<h2>^^^ Featured Project ^^^</h2>
+	
+<p>Latest additions:</p> 
+<ul class="blank">
+	
+	<% for property in @properties %>
+		<li>
+			<a href="/catalog/<%=h property.id %>">
+				* <%=h property.area %> sqft <%=h pluralize(property.bedrooms, "bedroom") if(property.bedrooms > 0) -%> <%=h property.find_type_name.downcase -%> in <%=h property.building.project.neighborhood.name %>, <%=h property.building.project.neighborhood.emirate.name %> at <%= number_to_currency(property.price, :unit => "AED ", :precision => 0) %>
+			</a>
+		</li>
+	<% end %>
+</ul>
+

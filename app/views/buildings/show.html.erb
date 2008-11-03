@@ -1,0 +1,23 @@
+<p>
+  <b>Project:</b>
+  <%=h @building.project_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @building.name %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @building.url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @building.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_building_path(@building) %> |
+<%= link_to 'Back', buildings_path %>

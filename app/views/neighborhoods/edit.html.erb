@@ -1,0 +1,20 @@
+<h1>Editing neighborhood</h1>
+
+<% form_for(@neighborhood) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :emirate_id %>
+    <%= f.select(:emirate_id, @neighborhood.find_all_emirates) %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @neighborhood %> |
+<%= link_to 'Back', neighborhoods_path %>
