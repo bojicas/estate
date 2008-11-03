@@ -3,7 +3,8 @@ class CatalogController < ApplicationController
   skip_before_filter :login_required
   
   def index
-    @properties = Property.find(:all)
+    @hot_properties = Property.find(:all, :order => 'updated_at DESC', :limit => 5)
+    @properties = Property.find(:all, :order => 'created_at DESC', :limit => 25)
     
     respond_to do |format|
       format.html # index.html.erb
