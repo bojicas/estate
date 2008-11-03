@@ -239,6 +239,29 @@ body {
 }
 
 
+#body-full .box {
+	padding: 15px;
+	background: #fff;
+	border: 1px solid #999;
+	margin: 1em 0;
+}
+#body-full h2 {
+	font: 18px "arial narrow", arial, sans-serif;
+}
+#body-full .box p {
+	margin: 0 0 1em 0;
+}
+#body-full .box .left {
+	margin-right: 15px;
+	border: 1px solid #999;
+}
+#body-full .box .btns {
+	text-align: right;
+	padding-top: 10px;
+	position: relative;
+}
+
+
 #footer {
 }
 
