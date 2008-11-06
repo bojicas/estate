@@ -1,5 +1,5 @@
 set :application, "estate"
-set :repository,  "~/repos/estate"
+set :repository,  "file:///home/dineinua/repos/estate"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
