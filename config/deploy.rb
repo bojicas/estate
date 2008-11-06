@@ -1,5 +1,5 @@
 set :application, "estate"
-set :repository,  "git@github.com:bojicas/estate.git"
+set :repository,  "dineinua@dineinuae.com:repos/estate"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
