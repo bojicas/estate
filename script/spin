@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby
+run "pkill -9 -u #{user} ruby"

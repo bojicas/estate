@@ -19,3 +19,4 @@ role :web, "dineinuae.com"
 role :db,  "dineinuae.com", :primary => true
 
 set :rails_env, 'production'
+
