@@ -1,5 +1,5 @@
 set :application, "estate"
-set :repository,  "/Users/bojicas/workspace/rubyspace/businessspace/estate"
+set :repository,  "git@github.com:bojicas/estate.git"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
@@ -11,7 +11,10 @@ set :deploy_to, "/home/dineinua/rails/#{application}"
 set :scm, :git
 
 set :user, "dineinua"
+set :use_sudo, false
 
-role :app, "your app-server here"
-role :web, "your web-server here"
-role :db,  "your db-server here", :primary => true
+role :app, "dineinuae.com"
+role :web, "dineinuae.com"
+role :db,  "dineinuae.com", :primary => true
+
+set :rails_env, 'production'
