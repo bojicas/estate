@@ -16,7 +16,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: 'dineinua_estate'
-  username: 'dineinua_estate'
-  password: 'BCUW=!2(NH5='
+  database: dineinua_estate
+  username: dineinua_estate
+  password: BCUW=!2(NH5=
   host: localhost
