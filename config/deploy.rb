@@ -1,4 +1,5 @@
 set :application, "estate"
+set :user, "dineinua"
 set :repository,  "file:///home/dineinua/repos/estate/"
 set :local_repository, "#{File.dirname(__FILE__)}/../"
 
@@ -11,7 +12,9 @@ set :deploy_to, "/home/dineinua/rails/#{application}"
 # your SCM below:
 set :scm, :git
 
-set :user, "dineinua"
+set :scm_username, user
+set :runner, user
+
 set :use_sudo, false
 
 role :app, "dineinuae.com"
