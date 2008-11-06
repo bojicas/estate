@@ -18,5 +18,5 @@ role :app, "dineinuae.com"
 role :web, "dineinuae.com"
 role :db,  "dineinuae.com", :primary => true
 
-set :rails_env, 'production'
+set :rails_env, 'development'
 
