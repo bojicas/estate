@@ -1,5 +1,6 @@
 set :application, "estate"
-set :repository,  "file:///home/dineinua/repos/estate"
+set :repository,  "file:///home/dineinua/repos/estate/"
+set :local_repository, "#{File.dirname(__FILE__)}/../"
 
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
