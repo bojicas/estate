@@ -1,8 +1,24 @@
-<div id="search">
+<div id="search">	  
+	<% form_tag(:controller => "search") do %>
+
+	  	<h2>Simple Search</h2>
+			<div style="float:left;">
+				<%= text_field_tag :emirate, params[:emirate], :value => session[:param_emirate] %>
+	
+				<label for="residential">Residential/Comm.</label>
+				<%= check_box_tag :Residential, params[:residential] %>				
+			
+
+				&nbsp; &nbsp;<%= submit_tag "Go" %>
+			</div>			
+
+	<% end -%><br /><br />
+	
+	<!--
 	<h2>&nbsp;Search Properties Online</h2>
 	<form action="/search">
 		<div id="search-text"><input type="text" size="40" class="text" name="q" value="" id="q" /><input type="submit" name="submit" value="Go &gt; &gt;  " id="submit" class="submit" /></div>
-	</form>
-	<br />
+	</form> -->
+
 	<%= link_to "Advanced Search", :controller => "search" %> | <%= link_to "Search Tips", :controller => "catalog" %>
 </div>

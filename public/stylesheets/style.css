@@ -9,6 +9,9 @@ h1 img {
 img {
 	border: 0;
 }
+label {
+	margin-left: 10px;
+}
 a {
 	color: #333;
 	font-weight: bold;

@@ -1,0 +1,37 @@
+<div class="advanced_search_form">
+	<% form_tag do %>
+	  <fieldset>
+	  	<legend>Advanced Search</legend>
+			<div style="float:left;">
+				<label for="emirate">Emirate:</label>
+				<%= text_field_tag :emirate, params[:emirate], :value => session[:param_emirate] %>
+
+				<label for="neigborhood">Neighborhood:</label>
+				<%= text_field_tag :neighborhood, params[:neighborhood], :value => session[:param_neighborhood] %>
+				
+				<label for="neigborhood">Project/Bldg.:</label>
+				<%= text_field_tag :neighborhood, params[:neighborhood] %>
+				
+				<br />
+				
+				<label for="from">Price range from:</label>
+				<%= text_field_tag :from, params[:from], :value => session[:param_from], :size => 12 %>
+
+				<label for="to">to:</label>
+				<%= text_field_tag :to, params[:to], :value => session[:param_to], :size => 12 %>				
+
+				<label for="bedrooms">Rooms:</label>
+				<%= text_field_tag :bedrooms, params[:bedrooms], :value => session[:param_bedrooms], :size => 2 %>
+
+				<label for="residential">Residential</label>
+				<%= check_box_tag :Residential, params[:residential] %>				
+					
+				<label for="commercial">Commercial</label>
+				<%= check_box_tag :Commercial, params[:commercial] %>				
+				
+				<label for="search">&nbsp;</label>
+				<%= submit_tag "Search" %>
+			</div>
+	  </fieldset>
+	<% end -%>
+</div>
