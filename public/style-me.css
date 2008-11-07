@@ -232,20 +232,3 @@ body {
 	background-color: #EF1818;
 	color: #fff;
 }
-
-#copyright {
-	background: top left url(../images/footer_bg.gif) repeat-x;
-	float: right;
-	width: 425px;
-	clear: both;
-	margin-right: 9px;
-	padding-bottom: 0px;
-	/*_margin-right: 5px; */
-}
-
-#copyright-left {
-	background: top left url(../images/footer_left.gif) no-repeat;
-	padding: 27px 30px;
-	font-size: 11px;
-	text-align: center;
-}
