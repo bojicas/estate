@@ -9,14 +9,15 @@
 </head>
 <body>
 
-<%= render :partial => "layouts/admin_menu" %>
+	<% unless controller.controller_name == "sessions" %>
+		<%= render :partial => "layouts/admin_menu" %>
+		<%= render :partial => "layouts/selected" %>
+	<% end %>
 
-<%= render :partial => "layouts/selected" %>
+	<p style="color: green"><%= flash[:notice] %></p>
+	<p style="color: red"><%= flash[:error] %></p>
 
-<p style="color: green"><%= flash[:notice] %></p>
-<p style="color: red"><%= flash[:error] %></p>
-
-<%= yield  %>
-
+	<%= yield  %>
+	
 </body>
 </html>
