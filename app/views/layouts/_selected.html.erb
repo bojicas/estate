@@ -2,25 +2,41 @@
 	<% if session[:emirate_id] && session[:emirate_name] %>
 		<li>
 			<%= session[:emirate_name] %> (<%= session[:emirate_id] %>)
-			<%= link_to "Reset", :controller => "emirates", :action => "reset", :id => session[:emirate_id] %>
+			<%= link_to "Reset", 
+				:controller => "emirates",
+				:action => "reset", 
+				:id => session[:emirate_id] %>
 		</li>
 	<% end %>
 	<% if session[:neighborhood_id] && session[:neighborhood_name] %>
 		<li>
 			<%= session[:neighborhood_name] %> (<%= session[:neighborhood_id] %>)
-			<%= link_to "Reset", :controller => "neighborhoods", :action => "reset", :id => session[:neighborhood_id] %>
+			<%= link_to "Reset", 
+				:controller => "neighborhoods", 
+				:action => "reset", 
+				:id => session[:neighborhood_id] %>
 		</li>
 	<% end %>
 	<% if session[:project_id] && session[:project_name] %>
 		<li>
 			<%= session[:project_name] %> (<%= session[:project_id] %>)
-			<%= link_to "Reset", :controller => "projects", :action => "reset", :id => session[:project_id] %>
+			<%= link_to "Reset", 
+				:controller => "projects", 
+				:action => "reset", 
+				:id => session[:project_id] %>
 		</li>
 	<% end %>
 	<% if session[:building_id] && session[:building_name] %>
 		<li>
 			<%= session[:building_name] %> (<%= session[:building_id] %>)
-			<%= link_to "Reset", :controller => "buildings", :action => "reset", :id => session[:building_id] %>
+			<%= link_to "Reset", 
+				:controller => "buildings", 
+				:action => "reset", 
+				:id => session[:building_id] %>
 		</li>
 	<% end %>
 </ul>
+	
+<div id="sub-menu-search" style="float:right;">
+
+</div>
