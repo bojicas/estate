@@ -16,6 +16,7 @@ set :scm_username, user
 set :runner, user
 
 set :use_sudo, false
+set :group_writable, false
 
 role :app, "dineinuae.com"
 role :web, "dineinuae.com"
