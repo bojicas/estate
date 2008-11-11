@@ -15,6 +15,7 @@ set :scm, :git
 set :scm_username, user
 set :runner, user
 
+set :branch, "master"
 set :use_sudo, false
 set :group_writable, false
 
