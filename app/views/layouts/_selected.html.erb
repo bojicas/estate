@@ -38,5 +38,9 @@
 </ul>
 	
 <div id="sub-menu-search" style="float:right;">
-
+	<% form_tag '/follow_up/property', :method => :put do %>
+		<label for="id">Ref #:</label>
+		<%= text_field_tag :id, params[:id], :size => 6 %>
+		<%= submit_tag "Go" %>
+	<% end -%>
 </div>
