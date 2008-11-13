@@ -4,8 +4,8 @@ load 'config/deploy'
 
 namespace :deploy do
 
-  task :fix_my_links, :roles => :app do
-    run "cd ~/rails/estate/current/public;rm -f ./property_photos/;ln -s ~/rails/estate/estate_database/property_photos/ ./property_photos"
+  task :fixlinks, :roles => :app do
+    run "cd ~/rails/estate/current/public;unlink ./property_photos/;ln -s ~/rails/estate/estate_database/property_photos/ ./property_photos"
   end
 
 
