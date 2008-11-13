@@ -4,6 +4,9 @@ class Property < ActiveRecord::Base
   has_many :inquiries
 
   has_one :property_photo, :dependent => :destroy
+  
+  validates_presence_of :building_id, :type_id, :bedrooms, :area, :price
+  validates_numericality_of :building_id, :type_id, :bedrooms, :area, :price
 
   # find related building
   def building
