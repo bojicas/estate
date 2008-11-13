@@ -25,4 +25,17 @@ class Property < ActiveRecord::Base
   def area_in_sqm
     (self.area * 0.09290304).round
   end
+  
+  def find_all_types
+    Type.find(:all).map {|u| ["#{u.name}", u.id]}
+  end
+  
+  def find_all_buildings(project_id = nil)
+    if project_id
+      Building.find(:all, :conditions => ["project_id = ?", project_id]).map {|u| ["#{u.name}", u.id]}
+      # Building.find_by_project_id(project_id).map {|u| ["#{u.name}", u.id]}
+    else
+      Building.find(:all).map {|u| ["#{u.name}", u.id]}
+    end
+  end
 end
