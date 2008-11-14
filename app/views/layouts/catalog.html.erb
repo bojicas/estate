@@ -22,16 +22,20 @@
 			<div id="header-gi"></div>
 		</div>
 		<div id="nav">
-			<div id="head"></div>
-			<div id="head-pip"></div>
+			<!-- ><div id="head"></div> -->
+			<!-- <div id="head-pip"></div> -->
+			<div id="nav-left">
 			<ul>
 				<li id="m1"><a href="/catalog">Home page</a></li>
 				<li id="m2"><a href="/catalog">Blog</a></li>
 				<li id="m3"><a href="/catalog">About us</a></li>
 			</ul>
+			</div>
+			
 			<% if(controller.controller_name == 'catalog') %>
 				<%= render :partial => "simple_search" %>
 			<% end %>
+			
 		</div>
 		<div id="body">
 			<div id="body-inner">
@@ -39,9 +43,7 @@
 			</div>
 			
 			<div id="footer">
-				<div id="help">
-					<p>If you're having problems visiting this site please don't hesitate to ask for help on the <a href="/catalog">forum</a>.</p>
-				</div>
+				
 				
 				<div id="copyright">
 					<div id="copyright-left">
