@@ -5,7 +5,14 @@
 
   <p>
     <%= f.label :project_id %><br />
-    <%= f.text_field :project_id %>
+			<% if session[:project_id] && session[:project_name] &&
+				session[:neighborhood_id] && session[:neighborhood_name] &&
+				session[:emirate_id] && session[:emirate_name] %>
+	    	<%= f.select(:project_id, @building.find_all_projects(session[:neighborhood_id]), :selected => session[:project_id]) %>
+			<% else %>
+	    	<%= f.select(:project_id, @building.find_all_projects) %>
+			<% end %>
+	  </p>
   </p>
   <p>
     <%= f.label :name %><br />
