@@ -10,4 +10,12 @@ class Project < ActiveRecord::Base
     )
     neighborhood
   end
+  
+  def find_all_neighborhoods(emirate_id = nil)
+    if emirate_id
+      Neighborhood.find(:all, :conditions => ["emirate_id = ?", emirate_id]).map {|u| ["#{u.name}", u.id]}
+    else
+      Neighborhood.find(:all).map {|u| ["#{u.name}", u.id]}
+    end
+  end
 end
