@@ -1,8 +1,10 @@
 <h1>Listing properties</h1>
 
-<table>
+<table border="1">
   <tr>
+		<th>Ref #</th>
 		<th>Thumbnail</th>
+		<th>Status</th>		
     <th>Building</th>
     <th>Type</th>
     <th>Bedrooms</th>
@@ -10,12 +12,18 @@
     <th>Area</th>
     <th>Price</th>
     <th>Url</th>
-    <th>Description</th>
   </tr>
 
 <% for property in @properties %>
+	<tr height="24px;"><td colspan="11" style="background-color:#CCC">&nbsp;</td></tr>
   <tr>
+		<td style="text-align:right;"><%=h property.id %></td>
 		<td><%= property_photo_for(property, :small) %></td>
+		<td>
+			Hot: <%= check_box_tag :hot, :hot, property.hot, :disabled => true %><br />
+			Available: <%= check_box_tag :available, :available, property.available, :disabled => true %><br />
+			Sold: <%= check_box_tag :sold, :sold, property.sold, :disabled => true %>
+		</td>
     <td><%=h property.building.project.neighborhood.emirate.name %> - <%=h property.building.project.neighborhood.name %> - <%=h property.building.project.name %> - <%=h property.building.name %></td>
     <td><%=h property.find_type_name %></td>
     <td><%=h property.bedrooms %></td>
@@ -23,11 +31,16 @@
     <td><%=h property.area %></td>
     <td><%=h property.price %></td>
     <td><%=h property.url %></td>
-    <td><%=h property.description %></td>
-    <td><%= link_to 'Show', property %></td>
-    <td><%= link_to 'Edit', edit_property_path(property) %></td>
-    <td><%= link_to 'Destroy', property, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>
+			<%= link_to 'Show', property %><br />
+    	<%= link_to 'Edit', edit_property_path(property) %><br />
+    	<%= link_to 'Destroy', property, :confirm => 'Are you sure?', :method => :delete %>
+		</td>
   </tr>
+	<tr>
+		<td colspan="2"><strong>Description:</strong></td>
+    <td colspan="8"><%=h property.description %></td>
+	</tr>
 <% end %>
 </table>
 

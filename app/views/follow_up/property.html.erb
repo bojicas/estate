@@ -41,6 +41,13 @@
 	  <b>Url:</b>
 	  <%=h @property.url %>
 	</p>
+	
+	<p>
+		<b>Status:</b>
+		Hot: <%= check_box_tag :hot, :hot, @property.hot, :disabled => true %>
+		Available: <%= check_box_tag :available, :available, @property.available, :disabled => true %>
+		Sold: <%= check_box_tag :sold, :sold, @property.sold, :disabled => true %>
+	</p>
 
 	<p>
 	  <b>Description:</b>
