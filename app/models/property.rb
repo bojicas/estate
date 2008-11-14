@@ -5,7 +5,7 @@ class Property < ActiveRecord::Base
 
   has_one :property_photo, :dependent => :destroy
   
-  validates_presence_of :building_id, :type_id, :bedrooms, :area, :price
+  validates_presence_of :building_id, :type_id, :bedrooms, :area, :price, :hot, :available, :sold
   validates_numericality_of :building_id, :type_id, :bedrooms, :area, :price
 
   # find related building

@@ -1,8 +1,8 @@
 class AddHotAvailableSoldToProperties < ActiveRecord::Migration
   def self.up
-    add_column :properties, :hot, :boolean
-    add_column :properties, :available, :boolean
-    add_column :properties, :sold, :boolean
+    add_column :properties, :hot, :boolean, :default => false
+    add_column :properties, :available, :boolean, :default => true
+    add_column :properties, :sold, :boolean, :default => false
   end
 
   def self.down
