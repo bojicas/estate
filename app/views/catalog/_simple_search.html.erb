@@ -1,8 +1,7 @@
 <div id="search">	
 	<% form_tag(:controller => "search") do -%>
 				Search for &nbsp;
-				<%= select_tag(:type_id, options_for_select(@property_types), :selected => "Offices") %>
-				<!-- <%= text_field_tag :emirate, params[:emirate], :value => session[:param_emirate] %> -->
+				<%= select_tag(:type_id, options_for_select(@property_types, session[:param_type_id].to_i)) %>
 				&nbsp; in &nbsp;
 				<%= text_field_tag :location, params[:location], :value => session[:param_location] %>
 				<%= submit_tag "Go" %>
