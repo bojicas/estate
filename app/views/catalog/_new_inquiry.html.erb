@@ -1,6 +1,10 @@
 <% form_for(@inquiry) do |f| %>
-  <%= f.error_messages %>
+  <%= f.error_messages %><br />
 	<h3>New inquiry (ref # <%=h @property.id %>)</h3>
+	
+	<p>If you are interested, please call <strong>+971 50 123 456</strong> and quote the
+	reference number (ref # <%=h @property.id %>). Or just send us your information using the form bellow an we will contact you.</p>
+	
   <p>
 		<%= f.hidden_field :property_id, :value => @property.id %>
     <%= f.label :name %><br />
