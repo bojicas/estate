@@ -4,6 +4,7 @@
 class ApplicationController < ActionController::Base
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
+  include SimpleCaptcha::ControllerHelpers
       
   session :session_key => '_estate_session_id'
 

@@ -45,12 +45,14 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(params[:inquiry])
 
     respond_to do |format|
-      if @inquiry.save
+      if @inquiry.save_with_captcha
         flash[:notice] = 'Inquiry was successfully created.'
         format.html { redirect_to(:back) || redirect_to(@inquiry) }
         format.xml  { render :xml => @inquiry, :status => :created, :location => @inquiry }
       else
-        format.html { render :action => "new" }
+        # format.html { render :action => "new" }
+        flash[:error] = "We couldn't create your inquity.<br />Image did not match with text"
+        format.html { redirect_to(:back) || redirect_to(@inquiry) }
         format.xml  { render :xml => @inquiry.errors, :status => :unprocessable_entity }
       end
     end

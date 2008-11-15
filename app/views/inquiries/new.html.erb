@@ -26,6 +26,9 @@
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </p>
+
+	<%= show_simple_captcha(:object=>"inquiry") %>
+
   <p>
     <%= f.submit "Create" %>
   </p>

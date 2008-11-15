@@ -29,4 +29,5 @@ class CatalogController < ApplicationController
       format.xml  { render :xml => @property }
     end
   end
+  
 end
