@@ -1,4 +1,4 @@
-DirectoryIndex dispatch.fcgi index.html
+DirectoryIndex dispatch.fcgi
 
 AddHandler fcgid-script .fcgi
 #Options +FollowSymLinks +ExecFCGI
