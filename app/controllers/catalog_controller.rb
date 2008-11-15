@@ -3,6 +3,7 @@ class CatalogController < ApplicationController
   skip_before_filter :login_required
   
   def index
+    @property_types = Type.find(:all, :order => "name").map {|u| ["#{u.name}", u.id]}
     @hot_properties = Property.find(:all, 
       :conditions => ["hot = ? and available =? and sold = ?", true, true, false], 
       :order => 'updated_at DESC',
@@ -21,6 +22,7 @@ class CatalogController < ApplicationController
   # GET /catalog/1
   # GET /catalog/1.xml
   def show
+    @property_types = Type.find(:all, :order => "name").map {|u| ["#{u.name}", u.id]}
     @property = Property.find(params[:id])
     @inquiry = Inquiry.new
 
