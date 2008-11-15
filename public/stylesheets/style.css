@@ -190,10 +190,11 @@ body {
 	width: 384px;
 }
 #topic-pic {
-	background: #666;
-	padding: 10px;
+	/* background: #666; 
+	width: 320;
+	height: 240; */
+	padding: 0px;
 	/* margin-top: -200px; */
-	z-index: 3;
 }
 /*
 #advanced-search {

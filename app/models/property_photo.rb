@@ -6,7 +6,7 @@ class PropertyPhoto < ActiveRecord::Base
                   :max_size     => 750.kilobytes,
                   :resize_to    => '800x600>',
                   :thumbnails   => {
-                    :large  => '259x199>',
+                    :large  => '320x240>',
                     :medium => '130x86>',
                     :small  => '80x60>'
                   }
