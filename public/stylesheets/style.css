@@ -1,7 +1,7 @@
 html, body, ul, li, h1, h2, h3, h4 {
 	margin: 0;
 	padding: 0;
-	list-style: none;485
+	list-style: none;
 }
 h1 img {
 	display: block;
@@ -341,7 +341,7 @@ body {
 
 .tab-selected a {
   font-weight: bold;
-  color: #red;
+  color: red;
   padding: 6px;
 }
 
