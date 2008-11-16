@@ -10,20 +10,50 @@
 	<h2>Property Details</h2>
 	<div class="box">
 		<p><b>Ref #:</b> <%=h @property.id %><br /><br />
-		<b>Type:</b> <%=h @property.find_type_name %><br />
-		<b>Address:</b> <%=h @property.building.name %><br />
-		<%= "<b>Bedrooms:</b> #{@property.bedrooms}<br />" if(@property.bedrooms > 0) %>
-		<b>View:</b> <%=h @property.view %><br />
-		<b>Area:</b> <%=h @property.area %> sqft (aprox. <%=h @property.area_in_sqm %> sqm)<br />
-		<b>Price:</b> <%= number_to_currency(@property.price, :unit => "AED ", :precision => 0) %><br />
-		<%=h @property.building.project.name %>,
-		<%=h @property.building.project.neighborhood.name %>,
-		<%=h @property.building.project.neighborhood.emirate.name %><br /><br />
-		<b>Added:</b> <%=h time_ago_in_words(@property.created_at) %> ago</p> 
-		<% if @property.description.length > 0 %>
-			<p><b>Description:</b></p>
-			<p><%= @property.description %></p>
-		<% end %>
+		<table>
+			<tr>
+				<td><b>Type:</b></td>
+				<td><%=h @property.find_type_name %></td>
+			</tr>
+			<tr>
+				<td><b>Address:</b></td>
+				<td><%=h @property.building.name %></td>
+			</tr>
+			<%= "<tr><td><b>Bedrooms:</b></td> <td>#{@property.bedrooms}</td></tr>" if(@property.bedrooms > 0) %>
+			<tr>
+				<td><b>View:</b></td>
+				<td><%=h @property.view %></td>
+			</tr>
+			<tr>
+				<td><b>Area:</b></td>
+				<td><%=h @property.area %> sqft (aprox. <%=h @property.area_in_sqm %> sqm)</td>
+			</tr>
+			<tr>
+				<td><b>Price:</b></td>
+				<td><%= number_to_currency(@property.price, :unit => "AED ", :precision => 0) %></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					<%=h @property.building.project.name %>,
+					<%=h @property.building.project.neighborhood.name %>,
+					<%=h @property.building.project.neighborhood.emirate.name %>
+				</td>
+			</tr>
+			<tr>
+				<td><b>Updated:</b></td>
+				<td><%=h time_ago_in_words(@property.updated_at) %> ago</td>
+			</tr>
+		
+			<% if @property.description.length > 0 %>
+			<tr>
+				<td colspan="2"><br /><b>Description:</b></td>
+			</tr>
+			<tr>
+				<td colspan="2"><%= @property.description %></td>
+			</tr>
+			<% end %>
+		</table>
 		
 		<div class="clear"></div>
 	</div>
