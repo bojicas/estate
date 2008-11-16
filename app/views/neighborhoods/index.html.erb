@@ -13,7 +13,7 @@
     <td><%= link_to 'Show', neighborhood %></td>
 		<td><%= link_to 'Select', :action => "select", :id => neighborhood.id %>
     <td><%= link_to 'Edit', edit_neighborhood_path(neighborhood) %></td>
-    <td><%= link_to 'Destroy', neighborhood, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%#= link_to 'Destroy', neighborhood, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
