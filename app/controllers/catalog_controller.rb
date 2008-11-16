@@ -8,11 +8,25 @@ class CatalogController < ApplicationController
       :conditions => ["hot = ? and available =? and sold = ?", true, true, false], 
       :order => 'updated_at DESC',
       :limit => 5)
+      
+    @properties_dubai = Property.find(:all, 
+      :include => [:building => [:project => [:neighborhood => :emirate]]],
+      :conditions => ["available =? and sold = ? and emirates.name like ?", true, false, 'dubai'], 
+      :order => 'properties.created_at DESC', 
+      :limit => 50)
+      
+    @properties_ajman = Property.find(:all, 
+      :include => [:building => [:project => [:neighborhood => :emirate]]],
+      :conditions => ["available =? and sold = ? and emirates.name like ?", true, false, 'ajman'], 
+      :order => 'properties.created_at DESC', 
+      :limit => 50)
+  
     @properties = Property.find(:all, 
-      :conditions => ["available =? and sold = ?", true, false], 
-      :order => 'created_at DESC', 
-      :limit => 25)
-    
+       :include => [:building => [:project => [:neighborhood => :emirate]]],
+       :conditions => ["available =? and sold = ? and emirates.name not like ? and emirates.name not like ?", true, false, 'Dubai', 'Ajman'], 
+       :order => 'properties.created_at DESC', 
+       :limit => 50)
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @properties }

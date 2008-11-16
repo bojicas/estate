@@ -1,5 +1,30 @@
 <div id="body-left">
-	<%= render :partial => "smart_listing" -%>
+	Please check latest properties added in the following emirates:
+	
+	<ul class="tabselector" id="tabcontrol1">
+	  <li class="tab-selected" id="dubai_tab">
+	    <%#= link_to_function('Dubai', "tabselect($('dubai_tab')); paneselect($('dubai_pane'))") %>
+			<%= link_to_function('Dubai', "loadPane($('dubai_pane'), '" + url_for(:controller=> 'catalog')  + "'), tabselect($('dubai_tab')); paneselect($('dubai_pane'))") %>
+	</li>
+	  <li class="tab-unselected" id="ajman_tab">
+	    <%= link_to_function('Ajman', "loadPane($('ajman_pane'), '" + url_for(:controller=> 'catalog') + "'), tabselect($('ajman_tab')); paneselect($('ajman_pane'))") %></li>
+		  <li class="tab-unselected" id="others_tab">
+		    <%= link_to_function('Others', "loadPane($('ajman_pane'), '" + url_for(:controller=> 'catalog') + "'), tabselect($('others_tab')); paneselect($('others_pane'))") %></li>
+
+	</ul>
+
+	<ul class="panes" id="panecontrol1">
+	  <li id="dubai_pane" class="pane-selected">
+	    <%= render :partial => 'smart_listing_dubai' %>
+	  </li>
+	  <li id="ajman_pane" class="pane-unselected">
+	  	<%= render :partial => 'smart_listing_ajman' %>
+	  </li>
+	  <li id="others_pane" class="pane-unselected">
+	    <%= render :partial => 'smart_listing'  %>
+	  </li>
+	<ul>
+	
 </div>
 <div id="body-right">
 	<p style="color:green"><%= flash[:notice] %></p>

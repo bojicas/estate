@@ -8,7 +8,7 @@ class PropertyPhoto < ActiveRecord::Base
                   :thumbnails   => {
                     :large  => '320x240>',
                     :medium => '130x86>',
-                    :small  => '80x60>'
+                    :small  => '80x60>',
                   }
                   
   validates_as_attachment
