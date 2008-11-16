@@ -19,7 +19,7 @@
 		<%=h @property.building.project.name %>,
 		<%=h @property.building.project.neighborhood.name %>,
 		<%=h @property.building.project.neighborhood.emirate.name %><br /><br />
-		<b>Date added:</b> <%=h @property.created_at %></p> 
+		<b>Added:</b> <%=h time_ago_in_words(@property.created_at) %> ago</p> 
 		<% if @property.description.length > 0 %>
 			<p><b>Description:</b></p>
 			<p><%= @property.description %></p>
