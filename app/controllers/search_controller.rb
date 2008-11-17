@@ -21,7 +21,7 @@ class SearchController < ApplicationController
     @properties = Property.paginate( 
       :include => [:building => [:project => [:neighborhood => :emirate]]], 
       :conditions => conditions,
-      :per_page => 3,
+      :per_page => 15,
       :page => params[:page], 
       :order => 'properties.created_at DESC')
     
