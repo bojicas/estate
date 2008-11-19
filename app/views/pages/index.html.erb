@@ -1,0 +1,32 @@
+<h1>Listing pages</h1>
+
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Slug</th>
+    <th>Order</th>
+    <th>Published</th>
+  </tr>
+
+<% for page in @pages %>
+	<tr>
+		<td colspan="5" style="background-color:lightgrey;">&nbsp;</td>
+	</tr>
+  <tr>
+    <td><%=h page.title %></td>
+    <td><%=h page.slug %></td>
+    <td><%=h page.order %></td>
+    <td><%=h page.published %></td>
+    <td><%= link_to 'Show', page %> | 
+				<%= link_to 'Edit', edit_page_path(page) %> |
+    		<%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<tr>
+		<td colspan="5"><%= page.body %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New page', new_page_path %>

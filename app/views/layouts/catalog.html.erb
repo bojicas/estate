@@ -28,13 +28,13 @@
 			<ul>
 				<li id="m1"><a href="/catalog">Home page</a></li>
 				<li id="m2"><a href="/catalog">Blog</a></li>
-				<li id="m3"><a href="/catalog">About us</a></li>
+				<li id="m3"><a href="/pages/about-us">About us</a></li>
 			</ul>
 			</div>
 			
-			<%# if(controller.controller_name == 'catalog') %>
+			<% if(controller.controller_name != 'pages') %>
 				<%= render :partial => "/catalog/simple_search" %>
-			<%# end %>
+			<% end %>
 			
 		</div>
 		<div id="body">
