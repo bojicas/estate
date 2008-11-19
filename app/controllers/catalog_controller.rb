@@ -3,6 +3,7 @@ class CatalogController < ApplicationController
   skip_before_filter :login_required
   
   def index
+    @title = "UAE's Real Estate Golden Index - Home Page"
     @property_types = Type.find(:all, :order => "name").map {|u| ["#{u.name}", u.id]}
     @hot_properties = Property.find(:all, 
       :conditions => ["hot = ? and available =? and sold = ?", true, true, false], 
@@ -39,7 +40,8 @@ class CatalogController < ApplicationController
     @property_types = Type.find(:all, :order => "name").map {|u| ["#{u.name}", u.id]}
     @property = Property.find(params[:id])
     @inquiry = Inquiry.new
-
+    @title = "UAE's Real Estate Golden Index - Property ref. # #{params[:id]}"
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @property }

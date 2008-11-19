@@ -3,7 +3,8 @@ class SearchController < ApplicationController
   layout 'catalog'
   skip_before_filter :login_required
 
-  def index   
+  def index  
+    @title = "UAE's Real Estate Golden Index - Property Search" 
     @property_types = Type.find(:all, :order => "name").map {|u| ["#{u.name}", u.id]}
      
     #session[:param_type_id] ||= String.new

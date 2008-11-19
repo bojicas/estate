@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   include SimpleCaptcha::ControllerHelpers
       
   session :session_key => '_estate_session_id'
+  @title ||= "UAE's Real Estate Golden Index"
 
   before_filter :login_required
   # To skip this in a subclassed controller:
