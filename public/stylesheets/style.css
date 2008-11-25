@@ -206,13 +206,13 @@ body {
 	height: 79px;
 }
 */
-#body-left h2 {
+/*#body-left h2 {
 	background: #666;
 	font-size: 12px;
 	color: #fff;
 	padding: 6px 23px;
 	margin: 6px 0 60px 0;
-}
+}*/
 #body-left ul {
 	/* margin: 30px 55px; */
 }
@@ -226,8 +226,9 @@ body {
 	border: 1px solid #999;
 	margin: 1em 0;
 }
+
 #body-right h2 {
-	font: 18px "arial narrow", arial, sans-serif;
+	/*font: 18px "arial narrow", arial, sans-serif; */
 }
 #body-right .box p {
 	margin: 0 0 1em 0;
@@ -353,7 +354,7 @@ body {
 	border-bottom: 1px solid #c0c0c0;
 	border-right: 1px solid #c0c0c0;
 	width: 483px;
-  min-height: 1200px;
+  min-height: 300px;
   overflow: auto;
 	background-color: white;
 }

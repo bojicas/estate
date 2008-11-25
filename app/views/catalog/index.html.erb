@@ -1,5 +1,5 @@
 <div id="body-left">
-	Please check latest properties added in the following emirates:
+	<h2>Latest Available Properties</h2>
 	
 	<ul class="tabselector" id="tabcontrol1">
 	  <li class="tab-selected" id="dubai_tab">
@@ -27,9 +27,11 @@
 	
 </div>
 <div id="body-right">
+	<h2>Hot Deals</h2>
+	<br />
 	<p style="color:green"><%= flash[:notice] %></p>
 	<p style="color:red"><%= flash[:error] %></p>
-	<h2>Hot Deals</h2>
+	
 	<%= render :partial => "boxed_listing" %>
 </div>
 <div class="clear"></div>
