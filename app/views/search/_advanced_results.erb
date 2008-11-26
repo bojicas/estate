@@ -10,6 +10,9 @@
 		<b>View:</b> <%=h property.view %><br />
 		<b>Area:</b> <%=h property.area %> sqft (<%=h property.area_in_sqm %> sqm)<br />
     <b>Price:</b> <%= number_to_currency(property.price, :unit => "AED ", :precision => 0) %><br />
+		<% if property.building.name != property.building.project.name %>
+			<%=h property.building.name %>,
+		<% end %>
 		<%=h property.building.project.name %>,
 		<%=h property.building.project.neighborhood.name %>,
 		<%=h property.building.project.neighborhood.emirate.name %></p> 

@@ -7,10 +7,6 @@
 	    	<td><b>Type:</b></td>
 				<td><%=h property.find_type_name %></td>
 			</tr>
-			<tr>
-				<td><b>Address:</b></td>
-				<td><%=h property.building.name %></td>
-			</tr>
 			<%= "<tr><td><b>Bedrooms:</b></td> <td>#{property.bedrooms}</td></tr>" if(property.bedrooms > 0) %>
 			<tr>
 				<td><b>View:</b></td>
@@ -25,7 +21,13 @@
 				<td><%= number_to_currency(property.price, :unit => "AED ", :precision => 0) %></td>
 			</tr>
 			<tr>
+				<td colspan="2"><b>Address:</b></td>
+			</tr>
+			<tr>
 				<td colspan="2">
+					<% if property.building.name != property.building.project.name %>
+						<%=h property.building.name %>,
+					<% end %>
 					<%=h property.building.project.name %>,
 					<%=h property.building.project.neighborhood.name %>,
 					<%=h property.building.project.neighborhood.emirate.name %>
