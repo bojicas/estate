@@ -43,7 +43,7 @@ class CatalogController < ApplicationController
     @title = "UAE's Real Estate Golden Index - Property ref. # #{params[:id]}"
     @average_price = Property.average(:price, 
       :include => [:building => [:project => :neighborhood]],
-      :conditions => ["neighborhoods.id = ?", @property.building.project.neighborhood.id])
+      :conditions => ["neighborhoods.id = ? and type_id = ? and bedrooms = ?", @property.building.project.neighborhood.id, @property.type_id, @property.bedrooms])
     
     respond_to do |format|
       format.html # show.html.erb
