@@ -41,6 +41,9 @@ class CatalogController < ApplicationController
     @property = Property.find(params[:id])
     @inquiry = Inquiry.new
     @title = "UAE's Real Estate Golden Index - Property ref. # #{params[:id]}"
+    @average_price = Property.average(:price, 
+      :include => [:building => [:project => :neighborhood]],
+      :conditions => ["neighborhoods.id = ?", @property.building.project.neighborhood.id])
     
     respond_to do |format|
       format.html # show.html.erb
