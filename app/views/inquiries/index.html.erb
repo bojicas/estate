@@ -12,7 +12,12 @@
 
 <% for inquiry in @inquiries %>
   <tr>
-		<td style="text-align:right; padding-right:15px;"><%= link_to "#{inquiry.property_id}", :controller => "follow_up", :action => "property", :id => "#{inquiry.property_id}" %></td>
+		<td style="text-align:right; padding-right:15px;">
+		<% if inquiry.property_id == 0 %>
+			<span style="color:blue;">RENT</span>
+		<% else %>
+			<%= link_to "#{inquiry.property_id}", :controller => "follow_up", :action => "property", :id => "#{inquiry.property_id}" %></td>
+		<% end %>
     <td><%=h inquiry.name %></td>
     <td><%=h inquiry.phone %></td>
     <td><%=h inquiry.email %></td>

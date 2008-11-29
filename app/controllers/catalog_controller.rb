@@ -51,4 +51,21 @@ class CatalogController < ApplicationController
     end
   end
   
+  def rent
+    @hot_properties = Property.find(:all, 
+      :conditions => ["hot = ? and available =? and sold = ?", true, true, false], 
+      :order => 'updated_at DESC',
+      :limit => 5)
+    @property_types = Type.find(:all, :order => "name").map {|u| ["#{u.name}", u.id]}
+    @inquiry = Inquiry.new
+    @title = "UAE's Real Estate Golden Index - Rent"
+    # @average_price = Property.average(:price, 
+    #  :include => [:building => [:project => :neighborhood]],
+    #  :conditions => ["neighborhoods.id = ? and type_id = ? and bedrooms = ?", @property.building.project.neighborhood.id, @property.type_id, @property.bedrooms])
+    
+    respond_to do |format|
+      format.html # show.html.erb
+    end
+  end
+  
 end

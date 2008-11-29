@@ -1,0 +1,44 @@
+<div id="body-left">
+	<% form_for(@inquiry) do |f| %>
+	  <%= f.error_messages %><br />
+		<h3>Interested to Rent?</h3>
+
+		<p>Please call <strong>+971 50 210 3223</strong> and ask for advice. Or just let us know what type of property you are looking for and we will contact you.</p>
+
+		<p>Please specify in the message:</p>
+		<p>
+		 &nbsp; 1. Type of property interested to rent.<br />
+		 &nbsp; 2. Duration.
+		</p>
+
+	  <p>
+			<%= f.hidden_field :property_id, :value => "0" %>
+	    <%= f.label :name %><br />
+	    <%= f.text_field :name %>
+	  </p>
+	  <p>
+	    <%= f.label :phone %><br />
+	    <%= f.text_field :phone %>
+	  </p>
+	  <p>
+	    <%= f.label :email %><br />
+	    <%= f.text_field :email %>
+	  </p>
+	  <p>
+	    <%= f.label :message %><br />
+	    <%= f.text_area :message, :rows => 5, :cols => 35 %>
+	  </p>
+
+		<%= show_simple_captcha(:object=>"inquiry") %>
+
+	  <p>
+	    <%= f.submit "Create" %>
+	  </p>
+	<% end %>
+</div>
+<div id="body-right">
+	<p style="color:green"><%= flash[:notice] %></p>
+	<p style="color:red"><%= flash[:error] %></p>
+	<%= render :partial => "boxed_listing" %>
+</div>
+<div class="clear"></div>
